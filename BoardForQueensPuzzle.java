@@ -44,11 +44,10 @@ public class BoardForQueensPuzzle {
     public boolean lastIsNg() {
       for (int i = 0; i < lastRankFilled; i ++) {
         if (filesWithQueens[lastRankFilled] == filesWithQueens[i]) return true;
-        //if(lastRankFilled != 0 && filesWithQueens[i] != 0 && filesWithQueens[lastRankFilled] != 0) { //check if diagonal
-          int rankDifference = lastRankFilled - i;
-          int fileDifference = filesWithQueens[lastRankFilled] - filesWithQueens[i];
-          if (Math.abs(lastRankFilled /  fileDifference) == 1) return true;
-        //}
+        //check if diagonal
+        int rankDifference = lastRankFilled - i;
+        int fileDifference = filesWithQueens[lastRankFilled] - filesWithQueens[i];
+        if (Math.abs(rankDifference /  fileDifference) == 1) return true;
       }
         return false;
     }
@@ -69,11 +68,10 @@ public class BoardForQueensPuzzle {
       if (lastRankFilled == -1) return false;
       for (int i = 0; i < lastRankFilled; i ++) {
         if (filesWithQueens[lastRankFilled] == filesWithQueens[i]) return false;
-        //if(lastRankFilled != 0 && filesWithQueens[i] != 0 && filesWithQueens[lastRankFilled] != 0) { //check if diagonal
-          int rankDifference = lastRankFilled - i;
-          int fileDifference = filesWithQueens[lastRankFilled] - filesWithQueens[i];
-          if (Math.abs(rankDifference /  fileDifference) == 1) return false;
-        //}
+        //check if diagonal
+        int rankDifference = lastRankFilled - i;
+        int fileDifference = filesWithQueens[lastRankFilled] - filesWithQueens[i];
+        if (Math.abs(rankDifference /  fileDifference) == 1) return false;
       }
       return true;
     }
